@@ -26,6 +26,7 @@ class PurchaseManageVariant(models.TransientModel):
 
     @api.onchange('product_tmpl_id')
     def _onchange_product_tmpl_id(self):
+
         self.variant_line_ids = [(6, 0, [])]
         template = self.product_tmpl_id
         context = self.env.context
