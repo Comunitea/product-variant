@@ -50,8 +50,10 @@ class SaleManageVariant(models.TransientModel):
                     lambda x: not(values - x.attribute_value_ids))[:1]
                 order_line = sale_order.order_line.filtered(
                     lambda x: x.product_id == product)[:1]
+                ## Aqui con los dartos demo, el ipad retina, hay una línea a 0
+                # me la salto, pero hay que ver por que pasa:
                 lines.append((0, 0, {
-                    'product_id': product,
+                    'product_id': product.id,
                     'disabled': not bool(product),
                     'value_x': value_x,
                     'value_y': value_y,
@@ -79,11 +81,15 @@ class SaleManageVariant(models.TransientModel):
                 else:
                     order_line.product_uom_qty = line.product_uom_qty
             elif line.product_uom_qty:
+                # TODO FALLA PORQUE NO HAY LINE.PRODUCT ID
+                # name = line.product_id.name_get()[0][1]
+                name = 'obtener producto'
                 order_line = OrderLine.new({
                     'product_id': line.product_id.id,
                     'product_uom': line.product_id.uom_id,
                     'product_uom_qty': line.product_uom_qty,
                     'order_id': sale_order.id,
+                    'name': name
                 })
                 order_line.product_id_change()
                 order_line_vals = order_line._convert_to_write(
