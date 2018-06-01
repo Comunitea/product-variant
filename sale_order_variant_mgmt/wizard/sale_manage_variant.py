@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
@@ -20,7 +19,7 @@ class SaleManageVariant(models.TransientModel):
         if "variant_line_ids" in field_onchange:
             for sub in ("product_id", "disabled", "value_x", "value_y",
                         "product_uom_qty"):
-                field_onchange.setdefault("variant_line_ids." + sub, u"")
+                field_onchange.setdefault("variant_line_ids." + sub, "")
         return super(SaleManageVariant, self).onchange(
             values, field_name, field_onchange)
 
