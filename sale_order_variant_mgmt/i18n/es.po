@@ -17,8 +17,8 @@ msgstr ""
 
 #. module: sale_order_variant_mgmt
 #: model:ir.ui.view,arch_db:sale_order_variant_mgmt.view_order_form
-msgid "Add or Modify Variants"
-msgstr "Añadir o modificar variantes"
+msgid "Add Variants"
+msgstr "Añadir variantes"
 
 #. module: sale_order_variant_mgmt
 #: model:ir.model.fields,field_description:sale_order_variant_mgmt.field_sale_order_line_product_attribute_value_ids

@@ -21,7 +21,7 @@ msgstr ""
 
 #. module: sale_order_variant_mgmt
 #: model:ir.ui.view,arch_db:sale_order_variant_mgmt.view_order_form
-msgid "Add or Modify Variants"
+msgid "Add Variants"
 msgstr ""
 
 #. module: sale_order_variant_mgmt
